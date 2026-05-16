@@ -6,17 +6,16 @@
   <title>Happy Sweet 17th, Kaylee! 🎉</title>
 
   <!-- Open Graph — preview saat link dibagikan di WhatsApp, IG, dll -->
-  <!-- Setelah deploy: ganti NETLIFY_URL dengan URL Netlify kamu (contoh: https://kaylee17.netlify.app) -->
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Happy Sweet 17th, Kaylee! 🎉">
-  <meta property="og:description" content="A special birthday website for Kaylee’s Sweet Seventeenth — 8 Mei 2026 💖">
-  <meta property="og:image"       content="NETLIFY_URL/Assets/mainscreen.jpeg">
+  <meta property="og:description" content="A special birthday website for Kaylee's Sweet Seventeenth — 8 Mei 2026 💖">
+  <meta property="og:image"       content="https://kaylee17.netlify.app/Assets/mainscreen.jpeg">
   <meta property="og:image:width"  content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Happy Sweet 17th, Kaylee! 🎉">
-  <meta name="twitter:description" content="A special birthday website for Kaylee’s Sweet Seventeenth — 8 Mei 2026 💖">
-  <meta name="twitter:image"       content="NETLIFY_URL/Assets/mainscreen.jpeg">
+  <meta name="twitter:description" content="A special birthday website for Kaylee's Sweet Seventeenth — 8 Mei 2026 💖">
+  <meta name="twitter:image"       content="https://kaylee17.netlify.app/Assets/mainscreen.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,6 +26,16 @@
   <!-- ================================================
        CONFETTI CANVAS (fullscreen, pointer-events:none)
        ================================================ -->
+  <!-- Welcome overlay — dismisses on tap/click and starts audio -->
+  <div id="welcome-overlay">
+    <div class="welcome-box">
+      <div class="welcome-emoji">🎀</div>
+      <div class="welcome-title">Happy Sweet 17th</div>
+      <div class="welcome-name">Kaylee!</div>
+      <button id="welcome-btn">Tap to Enter ✨</button>
+    </div>
+  </div>
+
   <canvas id="confetti-canvas"></canvas>
 
   <!-- ================================================

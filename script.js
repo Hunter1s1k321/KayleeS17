@@ -3,6 +3,27 @@
    ===================================================== */
 
 /* =====================================================
+   WELCOME OVERLAY — dismiss on button click, then start audio
+   ===================================================== */
+(function initWelcomeOverlay() {
+  var overlay = document.getElementById('welcome-overlay');
+  var btn     = document.getElementById('welcome-btn');
+  if (!overlay || !btn) return;
+
+  btn.addEventListener('click', function () {
+    overlay.classList.add('hidden');
+    // Remove from DOM after fade-out
+    overlay.addEventListener('transitionend', function () {
+      overlay.remove();
+    }, { once: true });
+    // Start audio — guaranteed user gesture at this point
+    if (typeof window.startAudioAfterOverlay === 'function') {
+      window.startAudioAfterOverlay();
+    }
+  });
+})();
+
+/* =====================================================
    GALLERY CONFIG
    ─────────────────────────────────────────────────────
    Tambahkan nama file foto party / makan-makan di sini.
@@ -116,10 +137,10 @@ const GALLERY_PHOTOS = [
   var lastVol   = 0.7;
 
   var TARGET_VOL = 0.7;
-  audio.volume    = 0;        // start silent, fade in
+  audio.volume    = 0;
   volSlider.value = TARGET_VOL;
 
-  // Set src immediately (JS-assigned src does NOT trigger IDM)
+  // Set src via JS (avoids IDM popup)
   audio.src = 'Assets/Be Like a Woman.mp3';
   audio.currentTime = 20;     // start at 0:20
 
@@ -136,20 +157,18 @@ const GALLERY_PHOTOS = [
     requestAnimationFrame(step);
   }
 
-  // Try autoplay on load — browsers may block it silently
-  var autoplayPromise = audio.play();
-  if (autoplayPromise !== undefined) {
-    autoplayPromise.then(function () {
+  // Audio starts only after welcome overlay is dismissed (user gesture required by browsers)
+  window.startAudioAfterOverlay = function () {
+    audio.play().then(function () {
       isPlaying = true;
       fadeInVolume();
       syncPlayBtn();
     }).catch(function () {
-      // Blocked by browser autoplay policy — user can press play manually
-      audio.volume = TARGET_VOL; // restore volume for manual play
+      audio.volume = TARGET_VOL;
       isPlaying = false;
       syncPlayBtn();
     });
-  }
+  };
 
   /* ── Update button labels ── */
   function syncPlayBtn() {

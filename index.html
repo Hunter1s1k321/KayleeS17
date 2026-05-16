@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Sweet 17th, Kaylee! 🎉</title>
+
+  <!-- Open Graph — preview saat link dibagikan di WhatsApp, IG, dll -->
+  <!-- Setelah deploy: ganti NETLIFY_URL dengan URL Netlify kamu (contoh: https://kaylee17.netlify.app) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Happy Sweet 17th, Kaylee! 🎉">
+  <meta property="og:description" content="A special birthday website for Kaylee’s Sweet Seventeenth — 8 Mei 2026 💖">
+  <meta property="og:image"       content="NETLIFY_URL/Assets/mainscreen.jpeg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Happy Sweet 17th, Kaylee! 🎉">
+  <meta name="twitter:description" content="A special birthday website for Kaylee’s Sweet Seventeenth — 8 Mei 2026 💖">
+  <meta name="twitter:image"       content="NETLIFY_URL/Assets/mainscreen.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================================================
+       CONFETTI CANVAS (fullscreen, pointer-events:none)
+       ================================================ -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ================================================
+       HERO
+       ================================================ -->
+  <section id="hero">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="shape s1"></div>
+      <div class="shape s2"></div>
+      <div class="shape s3"></div>
+      <div class="shape s4"></div>
+      <div class="shape s5"></div>
+      <div class="shape s6"></div>
+      <div class="shape s7"></div>
+      <div class="shape s8"></div>
+      <div class="shape s9"></div>
+    </div>
+    <div class="hero-bg-photo" aria-hidden="true"></div>
+
+    <div class="floating-items" aria-hidden="true">
+      <span class="fi fi1">🌸</span>
+      <span class="fi fi2">⭐</span>
+      <span class="fi fi3">💖</span>
+      <span class="fi fi4">🎀</span>
+      <span class="fi fi5">✨</span>
+      <span class="fi fi6">🌟</span>
+      <span class="fi fi7">💫</span>
+      <span class="fi fi8">🎉</span>
+    </div>
+
+    <div class="hero-content">
+      <div class="sweet-badge">✨ sweet ✨</div>
+      <div class="seventeen">17<sup>th</sup></div>
+      <h1 class="hero-title">Happy Birthday</h1>
+      <div class="hero-name">Kaylee!</div>
+      <p class="hero-tagline">Dedicated &nbsp;·&nbsp; Independent &nbsp;·&nbsp; Pop Mart Enthusiast</p>
+      <p class="hero-date">8 Mei 2026</p>
+      <div class="scroll-hint" aria-hidden="true">↓ scroll ↓</div>
+    </div>
+  </section>
+
+  <!-- MARQUEE 1 -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>✨ HAPPY BIRTHDAY KAYLEE &nbsp;·&nbsp; SWEET 17TH &nbsp;·&nbsp; DEDICATED &nbsp;·&nbsp; INDEPENDENT &nbsp;·&nbsp; POP MART COLLECTOR &nbsp;·&nbsp; </span>
+      <span>✨ HAPPY BIRTHDAY KAYLEE &nbsp;·&nbsp; SWEET 17TH &nbsp;·&nbsp; DEDICATED &nbsp;·&nbsp; INDEPENDENT &nbsp;·&nbsp; POP MART COLLECTOR &nbsp;·&nbsp; </span>
+    </div>
+  </div>
+
+  <!-- ================================================
+       ABOUT
+       ================================================ -->
+  <section id="about">
+    <!-- Background layers -->
+    <div class="about-bg-shapes" aria-hidden="true">
+      <div class="ab-shape ab1"></div>
+      <div class="ab-shape ab2"></div>
+      <div class="ab-shape ab3"></div>
+      <div class="ab-shape ab4"></div>
+      <div class="ab-shape ab5"></div>
+      <div class="ab-shape ab6"></div>
+      <div class="ab-shape ab7"></div>
+    </div>
+    <div class="about-bg-photo" aria-hidden="true"></div>
+
+    <!-- Content -->
+    <div class="about-content">
+    <div class="section-header reveal">
+      <div class="section-tag">WHO IS</div>
+      <h2 class="section-title">Kaylee?</h2>
+    </div>
+    <div class="trait-grid">
+      <div class="trait-card pink reveal">
+        <div class="trait-icon">🎯</div>
+        <div class="trait-label">Dedicated</div>
+        <p>Kalau udah ada tujuan, dia kejar sampe dapet. Nggak ada kata nyerah di kamus Kaylee.</p>
+      </div>
+      <div class="trait-card yellow reveal">
+        <div class="trait-icon">👑</div>
+        <div class="trait-label">Independent Woman</div>
+        <p>Mandiri, tapi tetap humble dan hangat. She carries herself with quiet confidence.</p>
+      </div>
+      <div class="trait-card blue reveal">
+        <div class="trait-icon">😂</div>
+        <div class="trait-label">Funny &amp; Cute</div>
+        <p>Vibes-nya selalu ceria, lucu, dan bikin orang di sekitarnya ketawa.</p>
+      </div>
+      <div class="trait-card coral reveal">
+        <div class="trait-icon">🧸</div>
+        <div class="trait-label">Pop Mart Collector</div>
+        <p>Borong Pop Mart adalah lifestyle. Setiap blind box adalah petualangan baru.</p>
+      </div>
+    </div>
+
+    <!-- Love letter from Marvel -->
+    <div class="about-letter reveal">
+      <div class="letter-quotemark">❝</div>
+      <p class="letter-body">
+        Kaylee is the most <strong>creative</strong>, most <strong>caring</strong>, most <strong>ambitious</strong>, most <strong>attentive</strong> person I've ever met, literally.
+        Kaylee punya <em>magic hands</em> yang beneran bisa make every imagination or sketch come to life — from crocheting, to drawing, to calligraphy, pokonya creating DIY projects tu jago banget!
+        And on top of all, she's a truly good person, <strong>beautiful inside out.</strong>
+      </p>
+      <p class="letter-body">
+        Kaylee is willing to listen semua cerita gue serandom dan segajelas apapun, selalu ngasih solusi untuk semua masalah yang gue punya, and has never once judged any of my mistakes, sejelek apapun itu.
+        Kaylee selalu remains by my side, di setiap ups and downs, in every moment di hidup gue, bahkan di titik terendah gue sekalipun.
+      </p>
+      <p class="letter-body">
+        Kaylee juga selalu peka sama kondisi emosional gue — disaat gue happy atau gue down banget, dia selalu nanyain gue kenapa, selalu memastikan setiap gue berusaha untuk ngelak.
+        And she's also sangat <strong>perfectionist</strong> 😭 — semuanya dia kerjain dengan effort yang gak main-main gila, bahkan dia juga <em>all out</em> dengan kado untuk gue, letter untuk gue, dan handmade gifts yang dia pun kerahin semua yang dia bisa.
+      </p>
+      <p class="letter-body">
+        That sums her up as a person — as someone who gives their all when they love someone.
+        Kaylee itu sosok yang perfect di mata gue: a diligent student, a ride-or-die friend, and a good human being.
+        Gue beneran <strong>lucky banget</strong> bisa kenal Kaylee 💗💗
+      </p>
+      <p class="letter-body letter-closing">
+        I hope everyone has a Kaylee in their lives — <em>just not my Kaylee.</em> WKWKWKWK 😭
+      </p>
+      <div class="letter-signature">— Freya</div>
+    </div>
+    </div><!-- /.about-content -->
+  </section>
+
+  <!-- ================================================
+       GALLERY
+       ================================================ -->
+  <section id="gallery">
+    <!-- Video background -->
+    <video class="gallery-bg-video" autoplay muted loop playsinline>
+      <source src="Assets/Videoold.mp4" type="video/mp4">
+    </video>
+
+    <!-- Content -->
+    <div class="gallery-content">
+    <div class="section-header reveal">
+      <div class="section-tag">SWEET SEVENTEEN</div>
+      <h2 class="section-title">The Party 🎉</h2>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Featured: Kaylee & Mom -->
+      <div class="photo-card featured reveal">
+        <img src="Assets/Kayleenmom.JPG" alt="Kaylee &amp; Mama yang selalu supportif"
+             onerror="this.closest('.photo-card').classList.add('photo-missing')">
+      </div>
+
+      <!-- Kaylee solo (grid size, not hero) -->
+      <div class="photo-card reveal">
+        <img src="Assets/KayleeSendiri.JPG" alt="Kaylee"
+             onerror="this.closest('.photo-card').classList.add('photo-missing')">
+      </div>
+      <div class="photo-card reveal">
+        <img src="Assets/KayleeSendiri2.jpg" alt="Kaylee"
+             onerror="this.closest('.photo-card').classList.add('photo-missing')">
+      </div>
+
+      <!-- DSC party/food photos injected here by script.js via GALLERY_PHOTOS array -->
+    </div>
+
+    <div class="drive-section reveal">
+      <p class="drive-text">Masih banyak lagi foto &amp; video seru-serunya!</p>
+      <a href="https://drive.google.com/drive/folders/1k0mxSQr2nOlQUa8e0Z-TLD3wKcY2qCw0?usp=sharing"
+         target="_blank" rel="noopener noreferrer" class="drive-btn">
+        📂 Lihat Foto &amp; Video Lengkap
+      </a>
+    </div>
+    </div><!-- /.gallery-content -->
+  </section>
+
+  <!-- MARQUEE 2 -->
+  <div class="marquee-strip marquee-alt" aria-hidden="true">
+    <div class="marquee-track">
+      <span>🎉 YOU ARE SO LOVED KAYLEE &nbsp;·&nbsp; KEEP SHINING &nbsp;·&nbsp; POP MART QUEEN &nbsp;·&nbsp; KIND &nbsp;·&nbsp; CHARMING &nbsp;·&nbsp; INDEPENDENT &nbsp;·&nbsp; WISHING YOU THE BEST &nbsp;·&nbsp; </span>
+      <span>🎉 YOU ARE SO LOVED KAYLEE &nbsp;·&nbsp; KEEP SHINING &nbsp;·&nbsp; POP MART QUEEN &nbsp;·&nbsp; KIND &nbsp;·&nbsp; CHARMING &nbsp;·&nbsp; INDEPENDENT &nbsp;·&nbsp; WISHING YOU THE BEST &nbsp;·&nbsp; </span>
+    </div>
+  </div>
+
+  <!-- ================================================
+       MESSAGES
+       ================================================ -->
+  <section id="messages">
+    <div class="section-header reveal">
+      <div class="section-tag">LOVE FROM</div>
+      <h2 class="section-title">Words for Kaylee 💌</h2>
+    </div>
+
+    <!-- 10 message cards + special word from Marvel -->
+    <!-- To edit: replace "Nama" with the person's name and "..." with their message -->
+    <div class="messages-grid">
+
+      <!-- Marvel -->
+      <div class="message-card mint reveal">
+        <img class="msg-avatar" src="Assets/marvel.jpg" alt="Marvel">
+        <div class="msg-sender">Marvel</div>
+        <div class="msg-text">"Independent"</div>
+      </div>
+
+      <div class="message-card pink reveal">
+        <img class="msg-avatar" src="Assets/freya.jpeg" alt="Freya">
+        <div class="msg-sender">Freya</div>
+        <div class="msg-text">"alafyu bebe"</div>
+      </div>
+
+      <!-- SLOT 2 -->
+      <div class="message-card yellow reveal">
+        <img class="msg-avatar" src="Assets/chris.jpeg" alt="Christian">
+        <div class="msg-sender">Christian</div>
+        <div class="msg-text">"Pendek"</div>
+      </div>
+
+      <!-- SLOT 3 -->
+      <div class="message-card blue reveal">
+        <img class="msg-avatar" src="Assets/calvin.jpeg" alt="Calvin">
+        <div class="msg-sender">Calvin</div>
+        <div class="msg-text">"Kind"</div>
+      </div>
+
+      <!-- SLOT 4 -->
+      <div class="message-card coral reveal">
+        <img class="msg-avatar" src="Assets/aneshka.jpeg" alt="Aneshka">
+        <div class="msg-sender">Aneshka</div>
+        <div class="msg-text">"Charming"</div>
+      </div>
+
+      <!-- SLOT 5 -->
+      <div class="message-card mint reveal">
+        <img class="msg-avatar" src="Assets/keanu.jpeg" alt="Keanu">
+        <div class="msg-sender">Keanu</div>
+        <div class="msg-text">"Exquisite"</div>
+      </div>
+
+      <!-- SLOT 6 -->
+      <div class="message-card pink reveal">
+        <img class="msg-avatar" src="Assets/yesha.jpg" alt="Yesha">
+        <div class="msg-sender">Yesha</div>
+        <div class="msg-text">"lucumenggemaskanimutmybeybehilovmuachmuachmuach"</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-emoji">🎂</div>
+      <p class="footer-text">Happy Sweet 17th, Kaylee!</p>
+      <p class="footer-sub">May today be as bright and bold as you are 💖</p>
+      <p class="footer-year">2026</p>
+    </div>
+  </footer>
+
+  <!-- ================================================
+       AUDIO PLAYER  –  fixed bottom-right
+       ================================================ -->
+  <div id="audio-player" role="region" aria-label="Music player">
+    <div class="player-header">
+      <span class="note-icon" aria-hidden="true">🎵</span>
+      <span class="player-title">Be Like a Woman</span>
+    </div>
+    <div class="player-controls">
+      <button id="play-btn" aria-label="Play">▶</button>
+      <div class="volume-wrap">
+        <button id="mute-btn" aria-label="Mute">🔊</button>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.02" value="0.7"
+               aria-label="Volume">
+      </div>
+    </div>
+    <audio id="audio" loop preload="none"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
